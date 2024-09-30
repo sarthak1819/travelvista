@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>product detail</title>
+</head>
+<body>
+    <section id="header">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="travelling_2060284.png" alt="Logo">
+        </div>
+        <p id="main-logo">TRAVEL VISTA</p>
+        <div class="nav-links">
+          <ul>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="book.html" class="active"  >Book</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="review.html">Review</a></li>
+            <li><a href="#"><i class="fa-solid fa-route"></i></a></li>
+          </ul>
+        </div>
+      </nav>
+    </section >
+
+   
+    <div class="product-page">
+      <!-- Product content -->
+    
+    
+    <div class="container">
+        <div class="product-image">
+            <img id="mainImage" src="spot1 devkund.jpg" alt="Men's Fashion T Shirt">
+            <div class="thumbnail-images">
+                <img src="devkund-1.jpg" alt="Thumbnail 1" onclick="changeImage('devkund-1.jpg')">
+                <img src="devkund-2.jpg" alt="Thumbnail 2" onclick="changeImage('devkund-2.jpg')">
+                <img src="devkund-3.jpg" alt="Thumbnail 3" onclick="changeImage('devkund-3.jpg')">
+                <img src="devkund-4.jpg" alt="Thumbnail 4" onclick="changeImage('devkund-4.jpg')">
+            </div>
+        </div>
+        <div class="product-details">
+            <h1>Devkund Waterfall</h1>
+            <p class="price">₹ 3000 </p>
+            <label for="size">Select Vehicle:</label>
+            <select id="size" class="size-dropdown">
+                <option value="Car">Car</option>
+                <option value="Train">Train</option>
+                <option value="Bus">Bus</option>
+                <!-- <option value="XL">XL</option> -->
+            </select>
+            <div class="quantity">
+                <label for="quantity">Persons:</label>
+                <input type="number" id="quantity" value="1" min="1">
+            </div>
+            <!--                 ....... -->
+            <h5>Extra Activities</h5>
+            <div class="extra-activities">
+                <label>
+                    <input type="checkbox" id="personalGuide" value="50"> Personal Guide (+$50)
+                </label>
+            </div>
+
+            <!-- Extra days -->
+            <div class="extra-days">
+                <label for="extraDays">Add Extra Days:</label>
+                <input type="number" id="extraDays" value="0" min="0"> days ($20 per day)
+            </div>
+            <!-- ...................... -->
+            <button id="addToCart">Add to Cart</button>
+            <button id="booknow">Book Now</button>
+             <!-- Total Cost Section (initially hidden) -->
+             <div id="totalCostSection" style="display:none;">
+              <h2>Total Cost</h2>
+              <p id="totalCost"></p>
+          </div>
+          <!-- .................... -->
+            <h2>Product Details</h2>
+            <p class="description">
+                The Gildan Ultra Cotton T-shirt is made from 6.0 oz. fabric, 100% cotton, offering unmatched comfort. Featuring a seamless collar, double-needle stitching, and a durable construction.
+            </p>
+        </div>
+    </div>
+   
+
+  </div>
+
+    
+    
+  
+    
+    
+
+    <section id="newsletter" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Sign Up For newsletter</h4>
+        <p>Get E-mail updates our latest  deals and <span>offers.</span></p>
+      </div>
+      <div class="form">
+        <input type="email" placeholder="Your email address">
+        <button  class="normal-btn" type="submit">Submit</button>
+      </div>
+    </section>
+ 
+<footer class="section-p1"  >
+  <div class="col"  >
+    <img src="logo-resize.png" alt="">
+    <h4>Contact</h4>
+    <p>  <strong>Adderss:</strong> "123, IT Lane, Andheri West, Mumbai, Maharashtra - 400053, India"</p>
+    <p>  <strong>Phone:</strong> +91 97 0088 3390/(+91  22 4000 4000)</p>
+    <p>  <strong>Hours:</strong> 09:00 -  18:00, Monday - Friday</p>
+      <div class="follow">
+        <h4>Follow us</h4>
+        <div class="icon">
+          <a href="https://www.facebook.com/your-facebook-page-url" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://www.twitter.com/your-twitter-handle" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a href="https://www.youtube.com/your-youtube-channel" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://www.instagram.com/your-instagram-handle" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <p></p>
+       
+        </div>
+      </div>
+  </div>
+
+  <div class="col">
+    <h4>About</h4>
+    <a href="#"> About Us</a>
+    <a href="#"> exclusive deals</a>
+    <a href="#"> Privacy Policy</a>
+    <a href="#"> Terms & Condition</a>
+    <a href="#"> Contact Us</a>
+  </div>
+
+  
+  <div class="col">
+    <h4>My Account</h4>
+    <a href="#"> Sign In</a>
+    <a href="#"> Saved Trips</a>
+     <a href="#"> Support / Help Center</a>
+    <a href="#"> Payment Methods</a>
+  </div>
+
+  <div class="col-install">
+    <p>Secured Payment Gateways</p>
+    <img src="gpay-resize.png" alt="">
+    <img src="visa-resize.png" alt="">
+  </div>
+</footer>
+
+<div class="copyright">
+  <p>© 2024 Travel Vista. All Rights Reserved.</p>
+</div>
+
+</body>
+
+<script src="script.js"></script>
+<script src="index.js"></script>
+</html>

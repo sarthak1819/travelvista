@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact Us</title>
+</head>
+<section id="header">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="travelling_2060284.png" alt="Logo">
+      </div>
+      <p id="main-logo">TRAVEL VISTA</p>
+      <div class="nav-links">
+        <ul>
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="book.html"   >Book</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html"  class="active" >Contact Us</a></li>
+          <li><a href="review.html">Review</a></li>
+          <li><a href="#"><i class="fa-solid fa-route"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </section >
+
+<body>
+    <div class="container">
+        <form onsubmit="Send()">
+
+            <label for="Name">Name</label>
+            <input type="text" id="Name" autocomplete="name" placeholder="Enter Your Name....">
+
+            <label for="Email">Email</label>
+            <input type="text" id="Email" autocomplete="email" placeholder="Enter Your Email...">
+
+            <label for="Contact">Contact Number</label>
+            <input type="text" id="Contact" autocomplete="tel" placeholder="Enter Your Contact number...">
+
+            <label for="subject">Subject</label>
+            <input type="text"id="subject" autocomplete="off" placeholder="Enter Your Subject...">
+
+            <label for="message">Message</label>
+            <textarea name="message"id="message" autocomplete="off" placeholder="Enter Your Message" style="height: 200px;"></textarea>
+            <!-- <button type="button"  value="button" onclick="Send()">Send</button> -->
+            <input type="button" value="Send Message" onclick="Send()">
+        </form>
+    </div>
+    
+    <!-- <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+          <h4>Sign Up For newsletter</h4>
+          <p>Get E-mail updates our latest  deals and <span>offers.</span></p>
+        </div>
+        <div class="form">
+          <input type="email" placeholder="Your email address">
+          <button  class="normal-btn" type="submit">Submit</button>
+        </div>
+      </section> -->
+   
+  <footer class="section-p1"  >
+    <div class="col"  >
+      <img src="logo-resize.png" alt="">
+      <h4>Contact</h4>
+      <p>  <strong>Adderss:</strong> "123, IT Lane, Andheri West, Mumbai, Maharashtra - 400053, India"</p>
+      <p>  <strong>Phone:</strong> +91 97 0088 3390/(+91  22 4000 4000)</p>
+      <p>  <strong>Hours:</strong> 09:00 -  18:00, Monday - Friday</p>
+        <div class="follow">
+          <h4>Follow us</h4>
+          <div class="icon">
+            <a href="https://www.facebook.com/your-facebook-page-url" target="_blank">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://www.twitter.com/your-twitter-handle" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com/your-youtube-channel" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/your-instagram-handle" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <p></p>
+         
+          </div>
+        </div>
+    </div>
+  
+    <div class="col">
+      <h4>About</h4>
+      <a href="#"> About Us</a>
+      <a href="#"> exclusive deals</a>
+      <a href="#"> Privacy Policy</a>
+      <a href="#"> Terms & Condition</a>
+      <a href="#"> Contact Us</a>
+    </div>
+  
+    
+    <div class="col">
+      <h4>My Account</h4>
+      <a href="#"> Sign In</a>
+      <a href="#"> Saved Trips</a>
+       <a href="#"> Support / Help Center</a>
+      <a href="#"> Payment Methods</a>
+    </div>
+  
+    <div class="col-install">
+      <p>Secured Payment Gateways</p>
+      <img src="gpay-resize.png" alt="">
+      <img src="visa-resize.png" alt="">
+    </div>
+  </footer>
+  
+  <div class="copyright">
+    <p>© 2024 Travel Vista. All Rights Reserved.</p>
+  </div>
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+
+        function Send(){
+
+          
+           var name = document.getElementById("Name").value;
+           var email = document.getElementById("Email").value;
+           var contact = document.getElementById("Contact").value;
+           var sub = document.getElementById("subject").value;
+           var mess = document.getElementById("message").value;
+
+           var body = "Name: " + name + "<br/> Email:" + email + "<br/> Contact Number:" + contact + "<br/> Message:" + mess;
+            
+           console.log(body);
+            Email.send({
+
+             SecureToken : "81f67074-1290-45d7-a500-43b0fc33f41b ",
+             To : 'sarthakmali135@gmail.com',
+             From : document.getElementById("Email").value,
+             Subject : sub,
+             Body : body,
+            }).then(
+                message =>{
+                    
+                    if(message=='OK'){
+
+                        swal("Successfull", "Your Data Successfull Received", "success");
+                    }
+                    
+                    else{
+
+                        swal("Something Wrong", "Your Data is not Received", "error");
+                    }
+                }
+              );
+
+            
+        
+        }
+
+       
+
+    </script>
+    <!-- <script>
+        function sendemail(){
+        Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "sarthakmali135@gmail.com",
+    Password : "BB5D85ECFE20CA5D53B07643408B060F580B",
+    To : 'sarthakmali63@gmail.com',
+    From : "sarthakmali135@gmail.com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+
+}
+    </script> -->
+</body>
+</html>

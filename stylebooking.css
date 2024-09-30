@@ -1,0 +1,32 @@
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.summary-details {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+p {
+    margin: 10px 0;
+}
+
+h3 {
+    margin-top: 20px;
+    font-size: 1.6rem;
+    color: #009688;
+}

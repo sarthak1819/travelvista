@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="review.css">
+    
+    <section id="header">
+        <nav class="navbar">
+          <div class="logo">
+            <img src="travelling_2060284.png" alt="Logo">
+          </div>
+          <p id="main-logo">TRAVEL VISTA</p>
+          <div class="nav-links">
+            <ul>
+              <li><a href="index.html"  >Home</a></li>
+              <li><a href="book.html">Book</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="review.html"  class="active">Review</a></li>
+              <li><a href="#"><i class="fa-solid fa-route"></i></a></li>
+            </ul>
+          </div>
+        </nav>
+      </section>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Leave a Review</h2>
+        <form id="reviewForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="message">Your Review:</label>
+            <textarea id="message" rows="5" required></textarea>
+
+            <button type="button" onclick="submitReview()">Submit Review</button>
+        </form>
+
+        <h2>All Reviews</h2>
+        <div id="reviews" class="reviews">
+            <!-- Reviews will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // Load reviews from localStorage and display them on the page
+        document.addEventListener('DOMContentLoaded', function () {
+            displayReviews();
+        });
+
+        // Function to handle review submission
+        function submitReview() {
+            const name = document.getElementById('name').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (name === "" || message === "") {
+                alert("Please fill out both fields.");
+                return;
+            }
+
+            // Get existing reviews from localStorage
+            let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+            // Add the new review
+            const newReview = {
+                name: name,
+                message: message,
+                date: new Date().toLocaleString()
+            };
+            reviews.push(newReview);
+
+            // Save the updated reviews to localStorage
+            localStorage.setItem('reviews', JSON.stringify(reviews));
+
+            // Clear the form
+            document.getElementById('reviewForm').reset();
+
+            // Display the updated reviews
+            displayReviews();
+        }
+
+        // Function to display all reviews
+        function displayReviews() {
+            const reviewsContainer = document.getElementById('reviews');
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+            // Clear the current reviews
+            reviewsContainer.innerHTML = "";
+
+            if (reviews.length === 0) {
+                reviewsContainer.innerHTML = '<p class="no-reviews">No reviews yet. Be the first to leave a review!</p>';
+                return;
+            }
+
+            // Loop through reviews and create HTML for each review
+            reviews.forEach(review => {
+                const reviewItem = document.createElement('div');
+                reviewItem.classList.add('review-item');
+
+                reviewItem.innerHTML = `
+                    <p class="review-name">${review.name}</p>
+                    <p class="review-message">${review.message}</p>
+                    <p class="review-date">${review.date}</p>
+                `;
+
+                reviewsContainer.appendChild(reviewItem);
+            });
+        }
+    </script>
+
+</body>
+</html>

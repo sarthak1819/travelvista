@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking - Devkund Waterfall</title>
+    <link rel="stylesheet" href="#">
+</head>
+<style>
+    /* Main container with fixed width and height */
+.booking-container {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Adds a vertical scroll bar */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* Left section: image and itinerary */
+.left-section {
+    flex: 1;
+    padding-right: 10px;
+}
+
+.left-section img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.left-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.left-section li {
+    padding: 10px;
+    background-color: #e3f2fd;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+/* Right section: booking options */
+.right-section {
+    flex: 1;
+    padding-left: 10px;
+    background-color: #ffffff;
+}
+
+.right-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.right-section li {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+#product-details {
+    margin-bottom: 15px;
+}
+
+#more-text {
+    display: none;
+}
+
+#read-more-btn {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+</style>
+<body>
+
+    <div class="booking-container">
+        <!-- Left side: travel image, product details, and itinerary -->
+        <div class="left-section">
+            <h2>Devkund Waterfall - Maharashtra</h2>
+            <img src="devkund.jpg" alt="Devkund Waterfall">
+            
+            <!-- Product details with read more/less toggle -->
+            <p id="product-details">
+                Devkund Waterfall is a stunning waterfall located near Bhira, in the Pune district of Maharashtra.
+                It is a hidden gem, surrounded by dense forest and hills.
+                <span id="more-text" style="display: none;">
+                    The waterfall is a confluence of three rivers and is considered one of the rare places where you can experience true wilderness. 
+                    The trail to Devkund is a moderate-level trek, and it offers a serene and breathtaking experience, especially after the monsoons.
+                </span>
+                <a href="javascript:void(0);" onclick="toggleReadMore()" id="read-more-btn">Read More</a>
+            </p>
+
+            <h3>Itinerary Plan</h3>
+            <ul>
+                <li>Day 1: Arrival and Rest</li>
+                <li>Day 2: Explore Devkund Waterfall</li>
+                <li>Day 3: Hiking and Local Tour</li>
+                <li>Day 4: Departure</li>
+            </ul>
+            <p>Base Price: <strong>$89</strong> per person</p>
+        </div>
+
+        <!-- Right side: booking options -->
+        <div class="right-section">
+            <h3>Customize Your Trip</h3>
+            <form id="bookingForm">
+                <label for="travel-date">Select Date:</label>
+                <input type="date" id="travel-date" required>
+
+                <label for="people">Number of People:</label>
+                <input type="number" id="people" value="1" min="1">
+
+                <ul>
+                    <li><input type="checkbox" id="extra-days" name="extras" value="Extra Days" data-cost="30"> Add Extra Days (+$30 per person)</li>
+                    <li><input type="checkbox" id="personal-guide" name="extras" value="Personal Guide" data-cost="20"> Add Personal Guide (+$20 per person)</li>
+                    <li><input type="checkbox" id="meals" name="extras" value="Meals" data-cost="25"> Add Meals (+$25 per person)</li>
+                </ul>
+
+                <label for="transport">Transportation Pickup (Required):</label>
+                <select id="transport" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Mumbai" data-cost="50">Mumbai (+$50)</option>
+                    <option value="Pune" data-cost="30">Pune (+$30)</option>
+                </select>
+
+                <p>Total Cost: <span id="totalCost">$89</span></p>
+
+                <button type="button" id="calculate" onclick="calculateTotal()">Calculate Total</button>
+                <button type="button" id="payNow" onclick="submitBooking()">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script to calculate and handle the booking -->
+    <script>
+        // Base price per person
+        const basePrice = 89;
+
+        // Function to toggle Read More / Read Less
+        function toggleReadMore() {
+            const moreText = document.getElementById("more-text");
+            const btnText = document.getElementById("read-more-btn");
+
+            if (moreText.style.display === "none") {
+                moreText.style.display = "inline";
+                btnText.innerHTML = "Read Less";
+            } else {
+                moreText.style.display = "none";
+                btnText.innerHTML = "Read More";
+            }
+        }
+
+        // Function to calculate total cost
+        function calculateTotal() {
+            let numberOfPeople = parseInt(document.getElementById('people').value);
+            let totalCost = numberOfPeople * basePrice;
+
+            // Extra options
+            const extras = document.querySelectorAll('input[name="extras"]:checked');
+            extras.forEach((extra) => {
+                totalCost += numberOfPeople * parseInt(extra.dataset.cost);
+            });
+
+            // Transport option
+            const transportOption = document.getElementById('transport');
+            const transportCost = parseInt(transportOption.options[transportOption.selectedIndex].dataset.cost);
+            totalCost += transportCost;
+
+            // Update the total cost on the page
+            document.getElementById('totalCost').innerText = `$${totalCost}`;
+        }
+
+        // Function to validate required fields and submit the booking
+        function submitBooking() {
+            const date = document.getElementById('travel-date').value;
+            const transport = document.getElementById('transport').value;
+
+            if (!date || !transport) {
+                alert('Please fill in the required fields (Date and Transportation Pickup).');
+                return;
+            }
+
+            let numberOfPeople = document.getElementById('people').value;
+            let extras = Array.from(document.querySelectorAll('input[name="extras"]:checked')).map(e => e.value).join(', ');
+            let totalCost = document.getElementById('totalCost').innerText;
+
+            // Store booking details for printing
+            localStorage.setItem('bookingDetails', JSON.stringify({
+                date,
+                numberOfPeople,
+                extras,
+                transport,
+                totalCost
+            }));
+
+            // Redirect to confirmation page
+            window.location.href = 'booking-summary.html';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog</title>
+    <link rel="stylesheet" href="/travel/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Wanderlust Diaries</h1>
+        </div>
+        
+    </header>
+
+    <main>
+        <section class="featured">
+            <img src="Konkan.jpg" alt="Featured Destination">
+            <div class="featured-text">
+                <h2>Exploring the Hidden Gems of Konkan</h2>
+                <p>Discover the untouched beauty of Konkan with its pristine beaches, lush green landscapes, and historic forts.</p>
+                
+            </div>
+        </section>
+
+        <section class="blog-posts">
+            <article class="post">
+                <img src="Ganpatipule.jpeg" alt="Destination 1">
+                <h3>Discover the Serenity of Ganpatipule</h3>
+                <p>A serene coastal town known for its pristine beach and the Swayambhu Ganpati Temple. The beach is a perfect blend of tranquility and natural beauty, with clear blue waters and soft sands. Ganpatipule also offers panoramic views of the Konkan coastline and is ideal for those looking for spiritual solace or a peaceful retreat</p>
+                
+            </article>
+
+            <article class="post">
+                <img src="harnai murud.jpg" alt="Destination 2">
+                <h3>The Villages Of Harnai-Murud</h3>
+                <p>The place is home to some of the most beautiful natural attractions. If you have kids visiting with you, you will find that they love the place around. Apart from the beauty of the lush greenery around, the place is also home to some of the most impressive forts that you will witness around including Kanakdurg, Suvarnadurg, and the Fort of Goa.</p>
+                
+            </article>
+
+            <article class="post">
+                <img src="raigad.jpg" alt="Destination 3">
+                <h3>Raigad Fort</h3>
+                <p>Raigad is a historically significant district in the Konkan region of Maharashtra, known for its rich cultural heritage and natural beauty. The most iconic attraction is Raigad Fort, which was the capital of the Maratha Empire under Chhatrapati Shivaji Maharaj. Perched atop a hill at an elevation of around 2,700 feet, the fort offers stunning views of the surrounding valleys and hills, and is accessible by a steep climb or via a ropeway.</p>
+                
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Wanderlust Diaries. All rights reserved.</p>
+    </footer>
+</body>
+</html>

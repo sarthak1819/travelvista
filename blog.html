@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Travel vista</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+/* Featured Section */
+.featured {
+    position: relative;
+    background-color: #2c3e50;
+    color: white;
+    margin: 20px 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.featured img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.featured-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.featured h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.read-more:hover {
+    background-color: #c0392b;
+}
+
+/* Blog Posts */
+.blog-posts {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.post {
+    background-color: #fff;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.post img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post h3 {
+    padding: 15px;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.post p {
+    padding: 0 15px 15px;
+}
+
+.read-more {
+    display: block;
+    text-align: center;
+    margin: 10px 0 20px;
+}
+</style>
+<body>
+    <section id="header">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="travelling_2060284.png" alt="Logo">
+        </div>
+        <p id="main-logo">TRAVEL VISTA</p>
+        <div class="nav-links">
+          <ul>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="book.html"   >Book</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="review.html">Review</a></li>
+            <li><a href="cart.html"><i class="fa-solid fa-route"></i></a></li>
+          </ul>
+        </div>
+      </nav>
+    </section  >
+    <!-- 
+    </video> -->
+  
+    <body>
+        <header>
+            <div class="logo">
+                <h1>BLOG</h1>
+            </div>
+            
+        </header>
+    
+        <main>
+            <section class="featured">
+                <img src="Konkan.jpg" alt="Featured Destination">
+                <div class="featured-text">
+                    <h2>Exploring the Hidden Gems of Konkan</h2>
+                    <p>Discover the untouched beauty of Konkan with its pristine beaches, lush green landscapes, and historic forts.</p>
+                    
+                </div>
+            </section>
+    
+            <section class="blog-posts">
+                <article class="post">
+                    <img src="Ganpatipule.jpeg" alt="Destination 1">
+                    <h3>Discover the Serenity of Ganpatipule</h3>
+                    <p>A serene coastal town known for its pristine beach and the Swayambhu Ganpati Temple. The beach is a perfect blend of tranquility and natural beauty, with clear blue waters and soft sands. Ganpatipule also offers panoramic views of the Konkan coastline and is ideal for those looking for spiritual solace or a peaceful retreat</p>
+                    
+                </article>
+    
+                <article class="post">
+                    <img src="harnai murud.jpg" alt="Destination 2">
+                    <h3>The Villages Of Harnai-Murud</h3>
+                    <p>The place is home to some of the most beautiful natural attractions. If you have kids visiting with you, you will find that they love the place around. Apart from the beauty of the lush greenery around, the place is also home to some of the most impressive forts that you will witness around including Kanakdurg, Suvarnadurg, and the Fort of Goa.</p>
+                    
+                </article>
+    
+                <article class="post">
+                    <img src="raigad.jpg" alt="Destination 3">
+                    <h3>Raigad Fort</h3>
+                    <p>Raigad is a historically significant district in the Konkan region of Maharashtra, known for its rich cultural heritage and natural beauty. The most iconic attraction is Raigad Fort, which was the capital of the Maratha Empire under Chhatrapati Shivaji Maharaj. Perched atop a hill at an elevation of around 2,700 feet, the fort offers stunning views of the surrounding valleys and hills, and is accessible by a steep climb or via a ropeway.</p>
+                    
+                </article>
+            </section>
+        </main>
+    
+    </body>
+    
+
+    <section id="newsletter" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Sign Up For newsletter</h4>
+        <p>Get E-mail updates our latest  deals and <span>offers.</span></p>
+      </div>
+      <div class="form">
+        <input type="email" placeholder="Your email address">
+        <button  class="normal-btn" type="submit">Submit</button>
+      </div>
+    </section>
+ 
+<footer class="section-p1"  >
+  <div class="col"  >
+    <img src="logo-resize.png" alt="">
+    <h4>Contact</h4>
+    <p>  <strong>Adderss:</strong> "123, IT Lane, Andheri West, Mumbai, Maharashtra - 400053, India"</p>
+    <p>  <strong>Phone:</strong> +91 97 0088 3390/(+91  22 4000 4000)</p>
+    <p>  <strong>Hours:</strong> 09:00 -  18:00, Monday - Friday</p>
+      <div class="follow">
+        <h4>Follow us</h4>
+        <div class="icon">
+          <a href="https://www.facebook.com/your-facebook-page-url" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://www.twitter.com/your-twitter-handle" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a href="https://www.youtube.com/your-youtube-channel" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://www.instagram.com/your-instagram-handle" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <p></p>
+       
+        </div>
+      </div>
+  </div>
+
+  <div class="col">
+    <h4>About</h4>
+    <a href="#"> About Us</a>
+    <a href="#"> exclusive deals</a>
+    <a href="#"> Privacy Policy</a>
+    <a href="#"> Terms & Condition</a>
+    <a href="#"> Contact Us</a>
+  </div>
+
+  
+  <div class="col">
+    <h4>My Account</h4>
+    <a href="#"> Sign In</a>
+    <a href="#"> Saved Trips</a>
+     <a href="#"> Support / Help Center</a>
+    <a href="#"> Payment Methods</a>
+  </div>
+
+  <div class="col-install">
+    <p>Secured Payment Gateways</p>
+    <img src="gpay-resize.png" alt="">
+    <img src="visa-resize.png" alt="">
+  </div>
+</footer>
+
+<div class="copyright">
+  <p>© 2024 Travel Vista. All Rights Reserved.</p>
+</div>
+
+</body>
+
+
+<script src="index.js"></script>
+</html>
